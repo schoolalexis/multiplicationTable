@@ -1,0 +1,29 @@
+<!-- [Angular] => input & button -->
+<div class="column is-half">
+	<form [formGroup]="tablesChoose" (ngSubmit)="multipleTables()">
+		<div class="field">
+			<label class="label">Number</label>
+			<div class="control">
+				<input class="input" formControlName="nbTInput" type="number" placeholder="Enter a number" value=""/>
+			</div>
+		</div>
+		<div class="field">
+			<div class="control">
+				<button class="button" type="submit">Submit</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- [Table] => step02 : choose the tables to show (multiple)-->
+<div class="column is-half">
+	<table class="table">
+
+	<tbody>
+		<tr *ngFor="let incT of tablesMultiples()">
+				<td>Res : {{ incT }}</td>
+		</tr>
+	</tbody>
+	
+	</table>
+</div>

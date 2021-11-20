@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+// /src/app/app.component.ts
+
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'multiplcationTable';
+
+  tableChoose!: FormGroup;
+  nbChoose: number = 0;
+
+  tablesChoose!: FormGroup;
+  nbTChoose: number = 0;
+
+  ngOnInit(): void {
+    this.tableChoose = new FormGroup({
+      nbInput: new FormControl(),
+    });
+
+    this.tablesChoose = new FormGroup({
+      nbTInput: new FormControl(),
+    })
+  }
 }
