@@ -1,6 +1,6 @@
 # Table de multiplication
 ## Objectif
-Ce projet à pour objectif la réalisation d'une application web, permet d'afficher des tables de multiplications.
+Ce projet à pour objectif la réalisation d'une application web, permettant d'afficher des tables de multiplications.
 
 ## Partie 1
 
@@ -105,7 +105,7 @@ export class TableComponent implements OnInit {
 ## Partie 2
 
 ### Table Multiple
-Pour la deuxième partie du projet, il est demandé, la création, d'une table de multiplication pouvant être multiplié, selon un nombre donnée en entrée. L'utilisateur pourra sur celle-ci, entrer un nombre correspondant au nombre de table de multiplication souhaité.
+Pour la deuxième partie du projet, il est demandé, la création, d'un certain nombre de table de multiplication, selon un nombre donnée en entrée. L'utilisateur pourra donc sur celle-ci, entrer un nombre correspondant, au nombre de table de multiplication souhaité.
 
 ```html
 <!-- /src/app/tables.component.html -->
