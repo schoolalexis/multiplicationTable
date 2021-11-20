@@ -209,33 +209,4 @@ export class TablesComponent implements OnInit {
 
 ## Représentation UML des classes
 
-```plantuml
-
-class AppComponent {
-    nbChoose: number
-    nbTChoose: number
-
-    ngOnInit(): void
-}
-
-AppComponent -- TableComponent
-
-class TableComponent {
-    nbChoose: number
-
-    ngOnInit(): void
-    uniqueTable()
-    uniqueTableMultiple()
-}
-
-AppComponent -- TablesComponent
-
-class TablesComponent {
-    nbTChoose: number
-
-    ngOnInit(): void
-    multipleTables()
-    tablesMultiples()
-    counNbTChoose()
-}
-```
+![uml](docs/images/uml.png)
