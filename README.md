@@ -1,47 +1,51 @@
 # Table de multiplication
+
 ## Objectif
-Ce projet à pour objectif la réalisation d'une application web, permettant d'afficher des tables de multiplications.
+
+Ce projet a pour objectif la réalisation d'une application web, permettant d'afficher des tables de multiplications.
 
 ## Partie 1
 
 ### Table unique
+
 Pour la première partie du projet, il est demandé, la création, d'une table de multiplication unique. L'utilisateur pourra sur celle-ci, entrer un nombre correspondant à la table de multiplication souhaité.
 
 ```html
 <!-- /src/app/table.component.html -->
 <!-- [Angular] => input & button -->
 <div class="column is-half">
-	<form [formGroup]="tableChoose" (ngSubmit)="uniqueTable()">
-		<div class="field">
-			<label class="label">Number</label>
-			<div class="control">
-				<input class="input" formControlName="nbInput" type="number" placeholder="Enter a number" value=""/>
-			</div>
-		</div>
-		<div class="field">
-			<div class="control">
-				<button class="button" type="submit">Submit</button>
-			</div>
-		</div>
-	</form>
+    <form [formGroup]="tableChoose" (ngSubmit)="uniqueTable()">
+        <div class="field">
+            <label class="label">Number</label>
+            <div class="control">
+                <input class="input" formControlName="nbInput" type="number" placeholder="Enter a number" value=""/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 <!-- [Table] => step01 : choose the table to show (unique)-->
 <div class="column is-half">
-	<table class="table">
-		<tr *ngFor="let inc of uniqueTableMultiple()">
-			<td>
-				{{ nbChoose }}
-				x
-				{{ inc/nbChoose }}
-				=
-				{{ inc }}</td>
-		</tr>
-	</table>
+    <table class="table">
+        <tr *ngFor="let inc of uniqueTableMultiple()">
+            <td>
+                {{ nbChoose }}
+                x
+                {{ inc/nbChoose }}
+                =
+                {{ inc }}</td>
+        </tr>
+    </table>
 </div>
 ```
 
 <quote>🚨 Pour activer les "formulaires réactives" :
+
 ```ts
 // /src/app/app.modules.ts
 ...
@@ -51,7 +55,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ...
     ReactiveFormsModule
 ```
- </quote>
+
+</quote>
 
 ```ts
 // /src/app/table.component.ts
@@ -99,44 +104,44 @@ export class TableComponent implements OnInit {
     return table;
   }
 }
-
 ```
 
 ## Partie 2
 
 ### Table Multiple
+
 Pour la deuxième partie du projet, il est demandé, la création, d'un certain nombre de table de multiplication, selon un nombre donnée en entrée. L'utilisateur pourra donc sur celle-ci, entrer un nombre correspondant, au nombre de table de multiplication souhaité.
 
 ```html
 <!-- /src/app/tables.component.html -->
 <!-- [Angular] => input & button -->
 <div class="column is-half">
-	<form [formGroup]="tablesChoose" (ngSubmit)="multipleTables()">
-		<div class="field">
-			<label class="label">Number</label>
-			<div class="control">
-				<input class="input" formControlName="nbTInput" type="number" placeholder="Enter a number" value=""/>
-			</div>
-		</div>
-		<div class="field">
-			<div class="control">
-				<button class="button" type="submit">Submit</button>
-			</div>
-		</div>
-	</form>
+    <form [formGroup]="tablesChoose" (ngSubmit)="multipleTables()">
+        <div class="field">
+            <label class="label">Number</label>
+            <div class="control">
+                <input class="input" formControlName="nbTInput" type="number" placeholder="Enter a number" value=""/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 <!-- [Table] => step02 : choose the tables to show (multiple)-->
 <div class="column is-half">
-	<table class="table">
+    <table class="table">
 
-	<tbody>
-		<tr *ngFor="let incT of tablesMultiples()">
-				<td>Res : {{ incT }}</td>
-		</tr>
-	</tbody>
-	
-	</table>
+    <tbody>
+        <tr *ngFor="let incT of tablesMultiples()">
+                <td>Res : {{ incT }}</td>
+        </tr>
+    </tbody>
+
+    </table>
 </div>
 ```
 
@@ -155,7 +160,7 @@ export class TablesComponent implements OnInit {
   tablesChoose!: FormGroup;
   @Input() nbTInput!: number;
   nbTChoose: number = 0;
-  
+
   constructor() { }
 
   get formControls() { return this.tablesChoose.controls; }
@@ -204,7 +209,6 @@ export class TablesComponent implements OnInit {
   }
 
 }
-
 ```
 
 ## Représentation UML des classes
